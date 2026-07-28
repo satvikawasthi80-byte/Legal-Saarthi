@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/chat";
+const API_URL = "https://legal-saarthi.onrender.com";
 
 const chatArea = document.getElementById("chat-area");
 const input = document.getElementById("userInput");
