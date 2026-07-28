@@ -1,0 +1,332 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+color:#fff;
+transition:.4s;
+}
+
+body.light{
+background:#f5f7fb;
+color:#111827;
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+display:flex;
+align-items:center;
+gap:10px;
+color:#60a5fa;
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+body.light .nav-links a{
+color:#111;
+}
+
+.nav-links a:hover{
+color:#60a5fa;
+}
+
+#theme-btn{
+padding:10px 15px;
+border:none;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+background:#2563eb;
+color:white;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+gap:50px;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
+font-size:58px;
+margin-bottom:20px;
+line-height:1.2;
+}
+
+.hero-text p{
+font-size:18px;
+opacity:.9;
+margin-bottom:35px;
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-image i{
+font-size:220px;
+color:#60a5fa;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:15px 30px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:12px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.outline{
+background:transparent;
+border:2px solid white;
+}
+
+/* Sections */
+
+section{
+padding:100px 8%;
+}
+
+section h2{
+text-align:center;
+font-size:40px;
+margin-bottom:35px;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:55px;
+margin-bottom:20px;
+color:#60a5fa;
+}
+
+/* Chat */
+
+.chat-box{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+#chat-area{
+height:350px;
+overflow:auto;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+}
+
+.chat-box input{
+padding:15px;
+border:none;
+border-radius:12px;
+outline:none;
+font-size:16px;
+}
+
+.chat-box button{
+padding:15px;
+background:#2563eb;
+border:none;
+border-radius:12px;
+color:white;
+cursor:pointer;
+}
+
+/* FAQ */
+
+.faq{
+padding:20px;
+margin:20px 0;
+border-radius:15px;
+background:rgba(255,255,255,.08);
+}
+
+/* Contact */
+
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input,
+textarea{
+padding:16px;
+border:none;
+border-radius:12px;
+outline:none;
+font-size:16px;
+}
+
+textarea{
+height:150px;
+resize:none;
+}
+
+form button{
+padding:16px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:30px;
+background:rgba(255,255,255,.08);
+margin-top:50px;
+}
+
+/* Light Mode */
+
+body.light nav{
+background:white;
+}
+
+body.light .card,
+body.light .faq,
+body.light footer,
+body.light #chat-area{
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+body.light input,
+body.light textarea{
+background:#f3f4f6;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+.hero-image i{
+font-size:140px;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+section h2{
+font-size:30px;
+}
+
+}
