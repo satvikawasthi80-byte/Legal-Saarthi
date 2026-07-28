@@ -1,4 +1,4 @@
-const API_URL = "https://legal-saarthi.onrender.com";
+const API_URL = "https://legal-saarthi.onrender.com/api/chat";
 
 const chatArea = document.getElementById("chat-area");
 const input = document.getElementById("userInput");
@@ -14,10 +14,12 @@ function addMessage(message, sender) {
 
     if (sender === "user") {
         div.style.background = "#2563eb";
+        div.style.color = "#fff";
         div.style.textAlign = "right";
         div.innerHTML = `<strong>You:</strong><br>${message}`;
     } else {
         div.style.background = "#334155";
+        div.style.color = "#fff";
         div.innerHTML = `<strong>Legal Saarthi:</strong><br>${message}`;
     }
 
@@ -40,18 +42,18 @@ async function sendMessage() {
     try {
 
         const response = await fetch(API_URL, {
-
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify({
-                message
+                message: message
             })
-
         });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
 
         const data = await response.json();
 
@@ -69,17 +71,13 @@ async function sendMessage() {
         );
 
         console.error(error);
-
     }
-
 }
 
 sendBtn.addEventListener("click", sendMessage);
 
-input.addEventListener("keypress", (e) => {
-
+input.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
         sendMessage();
     }
-
 });
